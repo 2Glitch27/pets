@@ -137,19 +137,19 @@
                 <nav class="friends__pagination pagination">
                     <ul class="pagination__list">
                         <li class="pagination__item">
-                            <a class="pagination__link pagination__link--disable">&lt;&lt;</a>
+                            <a id="start"  href="#" class="pagination__link pagination__link--disable">&lt;&lt;</a>
                         </li>
                         <li class="pagination__item">
-                            <a class="pagination__link pagination__link--disable">&lt;</a>
+                            <a id="back"  href="#" class="pagination__link pagination__link--disable">&lt;</a>
                         </li>
                         <li class="pagination__item">
                             <a class="pagination__link pagination__link--current">1</a>
                         </li>
                         <li class="pagination__item">
-                            <a href="#" class="pagination__link">></a>
+                            <a id="next" href="#" class="pagination__link">></a>
                         </li>
                         <li class="pagination__item">
-                            <a href="#" class="pagination__link">>></a>
+                            <a id="end" href="#" class="pagination__link">>></a>
                         </li>
                     </ul>
                 </nav>
@@ -203,6 +203,76 @@
             </div>
         </div>
     </footer>
+
+
+
+         <div class="pop-up__container">
+        <div class="pop-up">
+        <div >
+            <img class="pop-up__img" src="" alt="">
+        </div>
+        <div class="pop-up__right">
+            <button class="pop-up__close">x</button>
+            <div class="pop-up__desc">
+            </div>
+        </div>
+    </div>
+    </div>
+
+<style>
+    .pop-up__container{
+        display: none;
+        /* display: flex; */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 200;
+        justify-content: center; 
+        align-items: center;
+    }
+    .pop-up{
+        background: white;
+        padding: 90px;
+        position: relative;
+        max-width: 700px;
+        display: flex;
+        border-radius: 20px;
+    }
+    .pop-up__img{
+        width: 400px;
+        height: 420px;
+    }
+    .pop-up__right{
+        padding-left: 40px;
+    }
+    .pop-up__close{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        border: none;
+        padding: 15px 25px;
+        border-radius: 50%;
+        border: 3px solid #f1cdbc;
+        background-color: white;
+        color: black;
+        font-size: 27px;
+
+    }
+    .pop-up__active{
+        display: flex;
+    }
+    .pop-up__desc div{
+        font-size: 27px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+</style>
+
     <script src="main.js"></script>
 
 </body>

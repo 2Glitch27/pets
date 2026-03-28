@@ -359,12 +359,13 @@
     
     <div class="pop-up__container">
         <div class="pop-up">
-        <div class="pop-up__img">
-            <img class="" src="" alt="">
+        <div >
+            <img class="pop-up__img" src="" alt="">
         </div>
         <div class="pop-up__right">
             <button class="pop-up__close">x</button>
-            <div class="pop-up__title"></div>
+            <div class="pop-up__desc">
+            </div>
         </div>
     </div>
     </div>
@@ -372,6 +373,7 @@
 <style>
     .pop-up__container{
         display: none;
+        /* display: flex; */
         position: fixed;
         top: 0;
         left: 0;
@@ -384,15 +386,15 @@
     }
     .pop-up{
         background: white;
-        padding: 40px;
+        padding: 90px;
         position: relative;
-        max-width: 500px;
-        width: 90%;
+        max-width: 700px;
         display: flex;
+        border-radius: 20px;
     }
     .pop-up__img{
-        width: 150px;
-        height: 270px;
+        width: 400px;
+        height: 420px;
     }
     .pop-up__right{
         padding-left: 40px;
@@ -402,16 +404,22 @@
         top: 40px;
         right: 40px;
         border: none;
-        padding: 10px 15px;
-        border-radius: 17px;
-        background-color: #41291a;
-        color: aliceblue;
+        padding: 15px 25px;
+        border-radius: 50%;
+        border: 3px solid #f1cdbc;
+        background-color: white;
+        color: black;
+        font-size: 27px;
+
     }
     .pop-up__active{
         display: flex;
     }
-    .pop-up__title{
-        font-size: 30px;
+    .pop-up__desc div{
+        font-size: 27px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px
     }
 
 </style>
