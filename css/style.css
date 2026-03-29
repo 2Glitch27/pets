@@ -887,7 +887,6 @@ body{
 	.active--white{
 		background-color: white;
 		display: flex;
-		background-color: #41291a;
 		position: fixed;
     	top: 0;
     	right: 0;
@@ -1174,9 +1173,9 @@ body{
 		grid-template-columns: 1fr;
 	}
 
-	.friends__grid .friends-item:nth-child(n + 4){
+	/* .friends__grid .friends-item:nth-child(n + 4){
 		display: none;
-	}
+	} */
 	.hero__image{
 		max-width: 260px;
 	}

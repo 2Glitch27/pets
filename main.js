@@ -46,7 +46,7 @@ const pets = {
 document.addEventListener("DOMContentLoaded", function() {
     const burger = document.querySelector('.header__burger');
     const menu = document.querySelector('.header__main-menu');
-    const header = document.querySelectorAll('.header')
+    const header = document.querySelector('.header')
     const body = document.body;
     burger.addEventListener('click', () =>{
         if (header.classList.contains('header--white')){
@@ -55,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
             menu.classList.toggle('active');
         }
         body.classList.toggle('no-scroll');
-        // menu.classList.toggle('active');
-        burger.classList.toggle('active');
     })
     
 
@@ -198,10 +196,10 @@ createPagination(newFriends, containerFriends, getCount(), pageF)
 
 
 const btnFriends = document.querySelectorAll('.pagination__link');
-const btnStart = document.getElementById('start');
-const btnEnd = document.getElementById('end');
-const btnBack = document.getElementById('back');
-const btnNext = document.getElementById('next');
+// const btnStart = document.getElementById('start');
+// const btnEnd = document.getElementById('end');
+// const btnBack = document.getElementById('back');
+// const btnNext = document.getElementById('next');
 
 btnFriends.forEach(btn => {
        btn.addEventListener('click', (e) =>{
@@ -225,7 +223,6 @@ btnFriends.forEach(btn => {
         })
         
 })
-
 
 
 
