@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }else{
             menu.classList.toggle('active');
         }
+        burger.classList.toggle('active--burger')
         body.classList.toggle('no-scroll');
     })
     
@@ -86,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 const popUpOpen = document.querySelectorAll('.friends-item');
-// const popUpTitle = document.querySelector('.pop-up__desc');
 const popUpActive = document.querySelector('.pop-up__container')
 
 
@@ -147,7 +147,6 @@ document.addEventListener('keydown', (e) =>{
 
 const containerFriends = document.querySelector('.friends__grid');
 const friends = document.querySelectorAll('.friends-item');
-// const currentFriends = document.querySelector('.pagination__link')
 const pageFriends = document.querySelector('.pagination__link--current')
 
 function creatingArray (array, numberCopies){
@@ -162,9 +161,9 @@ for (let i = 0; i < numberCopies; i ++){
 }
 return newArray
 }
-
-
 const newFriends = creatingArray(friends, 6);
+
+
 
 function getCount (){
     let count = 8;
@@ -175,8 +174,8 @@ function getCount (){
     }
     return count;
 }
-// let count = 8;
 let pageF = 1;
+let lastPage = Math.ceil(newFriends.length / getCount());
 
 
 function createPagination (array, container, count, page){
@@ -186,7 +185,7 @@ function createPagination (array, container, count, page){
     const lastIndex = firstIndex + count;
     const friendsOnPage = array.slice(firstIndex, lastIndex);
     friendsOnPage.forEach( (item) =>{
-        container.appendChild(item)
+        container.appendChild(item.cloneNode(true))
     })  
 
 }
@@ -195,11 +194,26 @@ createPagination(newFriends, containerFriends, getCount(), pageF)
 }
 
 
+
+
+
 const btnFriends = document.querySelectorAll('.pagination__link');
-// const btnStart = document.getElementById('start');
-// const btnEnd = document.getElementById('end');
-// const btnBack = document.getElementById('back');
-// const btnNext = document.getElementById('next');
+const btnStart = document.getElementById('start');
+const btnEnd = document.getElementById('end');
+const btnBack = document.getElementById('back');
+const btnNext = document.getElementById('next');
+
+
+function activeBtn(page){
+    let isFirst = (page === 1);
+    let isLast = (page === lastPage)
+    btnStart.classList.toggle('pagination__link--disable', isFirst);
+    btnBack.classList.toggle('pagination__link--disable', isFirst);
+    btnEnd.classList.toggle('pagination__link--disable', isLast);
+    btnNext.classList.toggle('pagination__link--disable', isLast);
+}
+
+
 
 btnFriends.forEach(btn => {
        btn.addEventListener('click', (e) =>{
@@ -210,15 +224,16 @@ btnFriends.forEach(btn => {
         if (btn.id === 'start'){
             pageF = 1;         
         }else if (btn.id === 'end'){
-            pageF = Math.ceil(newFriends.length / getCount());        
+            pageF = lastPage;        
         }else if (btn.id === 'back' && pageF > 1){
             pageF--;
         }else if (btn.id === 'next' && pageF < newFriends.length/getCount()) {
             pageF++;        
         }
 
+        activeBtn(pageF);
         pageFriends.textContent = pageF;
-    createPagination(newFriends, containerFriends, getCount(), pageF)
+        createPagination(newFriends, containerFriends, getCount(), pageF)
 
         })
         
