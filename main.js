@@ -1,43 +1,43 @@
 const pets = {
-    'Katrine': {
-        'age': 'Age : 2',
-        'breed' : 'Breed : Сhartreux',
-        'character': 'She is known for her calm, balanced and loyal nature.',
+    Katrine: {
+        age: 'Age : 2',
+        breed : 'Breed : Сhartreux',
+        character: 'She is known for her calm, balanced and loyal nature.',
     },
-    'Jennifer': {
-        'age': 'Age : 1',
-        'breed' : 'Breed : Labrador Retriever.',
-        'character': 'A friendly, active breed, popular as a family companion.',
+    Jennifer: {
+        age: 'Age : 1',
+        breed : 'Breed : Labrador Retriever.',
+        character: 'A friendly, active breed, popular as a family companion.',
     },
-    'Woody': {
-        'age': 'Age : 5',
-        'breed' : 'Breed : Golden Retriever',
-        'character':'These dogs are known for their calm, gentle and friendly nature.',
+    Woody: {
+        age: 'Age : 5',
+        breed : 'Breed : Golden Retriever',
+        character:'These dogs are known for their calm, gentle and friendly nature.',
     },
-    'Timmy': {
-       'age': 'Age : 3',
-        'breed' : 'Breed : British Shorthair',
-        'character':'Usually they are calm, kind and intelligent animals.',
+    Timmy: {
+       age: 'Age : 3',
+        breed : 'Breed : British Shorthair',
+        character:'Usually they are calm, kind and intelligent animals.',
     },
-    'Scarlet': {
-        'age': 'Age : 1',
-        'breed' : 'Breed : Jack Russell Terrier',
-        'character':'Very energetic, intelligent, inquisitive and friendly dogs.',
+    Scarlet: {
+        age: 'Age : 1',
+        breed : 'Breed : Jack Russell Terrier',
+        character:'Very energetic, intelligent, inquisitive and friendly dogs.',
     },
-    'Freddie': {
-        'age': 'Age : 4',
-        'breed' : 'Breed : Gray Thai cat',
-        'character':'This is an extremely intelligent, sociable and emotional animal.',
+    Freddie: {
+        age: 'Age : 4',
+        breed : 'Breed : Gray Thai cat',
+        character:'This is an extremely intelligent, sociable and emotional animal.',
     },
-    'Sophia': {
-        'age': 'Age : 1',
-        'breed' : 'Breed : Schnoodles ',
-        'character':'They are energetic, intelligent and incredibly loyal companion dogs, charming with their friendly nature and cheerful spirit.',
+    Sophia: {
+        age: 'Age : 1',
+        breed: 'Breed : Schnoodles ',
+        character:'They are energetic, intelligent and incredibly loyal companion dogs, charming with their friendly nature and cheerful spirit.',
     },
-   'Charly': {
-        'age': 'Age : 3',
-        'breed' : 'Breed : Jack Russell Terrier',
-        'character':'Very energetic, intelligent, inquisitive and friendly dogs.',
+   Charly: {
+        age: 'Age : 3',
+        breed: 'Breed : Jack Russell Terrier',
+        character:'Very energetic, intelligent, inquisitive and friendly dogs.',
    },
 
 }
@@ -174,6 +174,9 @@ function getCount (){
     }
     return count;
 }
+
+
+
 let pageF = 1;
 let lastPage = Math.ceil(newFriends.length / getCount());
 
@@ -185,7 +188,7 @@ function createPagination (array, container, count, page){
     const lastIndex = firstIndex + count;
     const friendsOnPage = array.slice(firstIndex, lastIndex);
     friendsOnPage.forEach( (item) =>{
-        container.appendChild(item.cloneNode(true))
+        container.appendChild(item)
     })  
 
 }
@@ -238,6 +241,9 @@ btnFriends.forEach(btn => {
         })
         
 })
+
+
+
 
 
 
